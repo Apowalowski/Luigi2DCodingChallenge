@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 namespace LuigiChallenge
 {
     public class Luigi
@@ -31,7 +33,39 @@ namespace LuigiChallenge
 
         public string GoHome2D(int[][] map)
         {
-            throw new NotImplementedException();
+            var direction = "";
+            for(int i = 0; i < map.Length; i++ )
+            {
+                
+                for(int n = 0; n < map[i].Length; n++)
+                
+                
+                    {
+                    if (n < map[i].Length -1)
+                    {
+
+                        if (map[i][n] == 0 && map[i][n + 1] == 0)
+                        {
+
+
+                            direction += " Right";
+
+                        }
+
+
+                    }
+                       
+
+                    }
+                if (i < map.Length -1)
+                {
+                    direction += " Down";
+                }
+            }
+            return direction.TrimStart();
         }
+               
     }
 }
+    
+
